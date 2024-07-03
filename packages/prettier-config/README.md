@@ -59,8 +59,11 @@ To use the configuration in a project, use **one** of the methods below:
 To exclude files from formatting, create a `.prettierignore` file in the root of your project.
 
 ```gitignore
-**/ios/*.md
-**/android/*.md
+**/dist
+**/node_modules
+**/.angular
+**/android
+**/ios
 ```
 
 ### Helper scripts
@@ -75,3 +78,11 @@ The following helper scripts can be added to `package.json`:
   }
 }
 ```
+
+### WebStorm Integration
+
+To enable prettier in your IDE (and also _Run on save_):
+
+_Settings_ --> _Languages & Frameworks_ --> _Prettier_
+
+![WebStorm integration screenshot](assets/webstorm-integration.png)
