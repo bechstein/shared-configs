@@ -4,7 +4,8 @@
   "description": "Monorepo of shared configuration packages for consistency across projects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier:check": "npx prettier . --check",
+    "prettier:fix": "npx prettier . --write"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/bechstein/shared-configs/issues"
   },
-  "homepage": "https://github.com/bechstein/shared-configs#readme"
+  "homepage": "https://github.com/bechstein/shared-configs#readme",
+  "prettier": "@bechstein/prettier-config",
+  "devDependencies": {
+    "@bechstein/prettier-config": "file:packages/prettier-config",
+    "prettier": "^3.3.2"
+  }
 }
