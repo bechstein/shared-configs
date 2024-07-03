@@ -1,4 +1,4 @@
-# @bechstein/shared-config
+# @bechstein/shared-configs
 
 This repository houses shared configurations for various linting and formatting tools used across multiple projects to
 maintain consistency and reduce duplication.
