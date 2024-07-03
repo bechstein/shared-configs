@@ -1,6 +1,6 @@
 {
   "name": "@bechstein/prettier-config",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Universal shareable Prettier configurations",
   "exports": {
     "import": "./index.mjs",
