@@ -1,11 +1,13 @@
 {
   "name": "@bechstein/shared-configs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Monorepo of shared configuration packages for consistency across projects",
   "main": "index.js",
   "scripts": {
     "prettier:check": "npx prettier . --check",
-    "prettier:fix": "npx prettier . --write"
+    "prettier:fix": "npx prettier . --write",
+    "eslint:check": "npx eslint .",
+    "eslint:fix": "npx eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,14 @@
   "homepage": "https://github.com/bechstein/shared-configs#readme",
   "prettier": "@bechstein/prettier-config",
   "devDependencies": {
+    "@bechstein/eslint-config": "file:packages/eslint-config",
     "@bechstein/prettier-config": "file:packages/prettier-config",
-    "prettier": "^3.3.2"
+    "@eslint/js": "^9.17.0",
+    "angular-eslint": "^19.0.2",
+    "eslint": "^9.17.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1"
   }
 }
