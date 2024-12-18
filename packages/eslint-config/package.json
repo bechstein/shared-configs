@@ -1,0 +1,46 @@
+{
+  "name": "@bechstein/eslint-config",
+  "version": "1.0.0",
+  "description": "Universal shareable ESLint configuration",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "index.mjs",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "scripts": {
+    "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
+    "postpublish": "rm -rf ./LICENSE.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bechstein/shared-configs.git"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "shared"
+  ],
+  "author": "C. Bechstein Digital GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bechstein/shared-configs/issues"
+  },
+  "homepage": "https://github.com/bechstein/shared-configs#readme",
+  "dependencies": {
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@eslint/js": "^9.0.0",
+    "angular-eslint": "^18.0.0 || ^19.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "*",
+    "typescript-eslint": "^8.0.0"
+  }
+}

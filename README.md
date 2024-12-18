@@ -8,6 +8,7 @@ maintain consistency and reduce duplication.
 This monorepo follows a structured layout with a `packages` directory, where each configuration is maintained in its own subdirectory. Currently, the available package is:
 
 - [@bechstein/prettier-config](packages/prettier-config/README.md)
+- [@bechstein/eslint-config](packages/eslint-config/README.md)
 
 ## License
 
