@@ -7,12 +7,12 @@ To install the package, follow the steps below:
 1. Install peer dependencies:
 
    ```bash
-   npm i -D eslint @eslint/js typescript typescript-eslint angular-eslint prettier eslint-plugin-prettier
+   npm i -D eslint @eslint/js typescript typescript-eslint
    ```
-   
+
 2. Install `angular-eslint` if used in an **Angular** project, otherwise **skip** this step:
 
-    ```bash
+   ```bash
    npm i -D angular-eslint
    ```
 
