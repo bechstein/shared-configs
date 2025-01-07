@@ -1,16 +1,26 @@
 {
   "name": "@bechstein/eslint-config",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Universal shareable ESLint configuration",
   "exports": {
-    "import": "./index.mjs",
-    "require": "./index.js"
+    "./angular": {
+      "import": "./angular/index.mjs",
+      "require": "./angular/index.js"
+    },
+    "./typescript/recommended": {
+      "import": "./typescript/recommended/index.mjs",
+      "require": "./typescript-recommended/index.js"
+    },
+    "./typescript/strict": {
+      "import": "./typescript/strict/index.mjs",
+      "require": "./typescript/strict/index.js"
+    }
   },
   "files": [
-    "index.js",
-    "index.mjs",
-    "README.md",
-    "LICENSE.txt"
+    "angular/**",
+    "LICENSE.txt",
+    "typescript/recommended/**",
+    "typescript/strict/**"
   ],
   "scripts": {
     "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
@@ -42,5 +52,10 @@
     "prettier": "^3.0.0",
     "typescript": "*",
     "typescript-eslint": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "angular-eslint": {
+      "optional": true
+    }
   }
 }

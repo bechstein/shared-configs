@@ -9,8 +9,14 @@ To install the package, follow the steps below:
    ```bash
    npm i -D eslint @eslint/js typescript typescript-eslint angular-eslint prettier eslint-plugin-prettier
    ```
+   
+2. Install `angular-eslint` if used in an **Angular** project, otherwise **skip** this step:
 
-2. Install `@bechstein/eslint-config`:
+    ```bash
+   npm i -D angular-eslint
+   ```
+
+3. Install `@bechstein/eslint-config`:
 
    ```bash
    npm i -D @bechstein/eslint-config
@@ -18,10 +24,10 @@ To install the package, follow the steps below:
 
 ## Usage
 
-- Create a `eslint.config.js`/``eslint.config.mjs file and add the following:
+- Create a `eslint.config.js`/`eslint.config.mjs` file and add the following:
 
   ```js
-  import cbdEslintConfig from "@bechstein/eslint-config";
+  import cbdEslintConfig from "@bechstein/eslint-config/angular";
   import tseslint from "typescript-eslint";
 
   export default tseslint.config(...cbdEslintConfig, {
