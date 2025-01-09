@@ -10,13 +10,7 @@ To install the package, follow the steps below:
    npm i -D eslint @eslint/js typescript typescript-eslint
    ```
 
-2. Install `angular-eslint` if used in an **Angular** project, otherwise **skip** this step:
-
-   ```bash
-   npm i -D angular-eslint
-   ```
-
-3. Install `@bechstein/eslint-config`:
+2. Install `@bechstein/eslint-config`:
 
    ```bash
    npm i -D @bechstein/eslint-config
@@ -24,21 +18,39 @@ To install the package, follow the steps below:
 
 ## Usage
 
-- Create a `eslint.config.js`/`eslint.config.mjs` file and add the following:
+- Create a ~~`eslint.config.js`~~/`eslint.config.mjs` file and add the following:
 
-  ```js
-  import cbdEslintConfig from "@bechstein/eslint-config/angular";
-  import tseslint from "typescript-eslint";
+  - **Recommended**
 
-  export default tseslint.config(...cbdEslintConfig, {
-    languageOptions: {
-      parserOptions: {
-        project: ["**/tsconfig*.json"],
-        tsconfigRootDir: import.meta.dirname,
+    ```js
+    import cbdRecommended from "@bechstein/eslint-config/recommended";
+    import tseslint from "typescript-eslint";
+
+    export default tseslint.config(...cbdRecommended, {
+      languageOptions: {
+        parserOptions: {
+          project: ["**/tsconfig*.json"],
+          tsconfigRootDir: import.meta.dirname,
+        },
       },
-    },
-  });
-  ```
+    });
+    ```
+
+  - **Strict**
+
+    ```js
+    import cbdStrict from "@bechstein/eslint-config/strict";
+    import tseslint from "typescript-eslint";
+
+    export default tseslint.config(...cbdStrict, {
+      languageOptions: {
+        parserOptions: {
+          project: ["**/tsconfig*.json"],
+          tsconfigRootDir: import.meta.dirname,
+        },
+      },
+    });
+    ```
 
 ### Helper scripts
 

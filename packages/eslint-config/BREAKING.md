@@ -4,6 +4,29 @@ This document outlines the breaking changes introduced in the package. Review th
 
 ---
 
+## **Version 3.0.0**
+
+1. **Separation of Angular Configuration**
+
+   - The `exports` field has been updated and the Angular configuration has been removed from this package:
+   - Remaining sub-paths:
+     - `./recommended`
+     - `./strict`
+
+   **Migration Guide**
+
+   - Update your imports to use the new paths:
+
+   ```javascript
+   // Before
+   import tsRecommended from "@bechstein/eslint-config/typescript/recommended";
+   import tsStrict from "@bechstein/eslint-config/typescript/strict";
+
+   // After
+   import tsRecommended from "@bechstein/eslint-config/recommended";
+   import tsStrict from "@bechstein/eslint-config/strict";
+   ```
+
 ## **Version 2.0.0**
 
 1. **Changes to `exports` Structure**

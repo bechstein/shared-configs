@@ -1,11 +1,13 @@
-import globals from "globals";
-import js from "@eslint/js";
+import eslintConfigPrettier from 'eslint-config-prettier';
+import globals from 'globals';
+import js from '@eslint/js';
 
 export default {
-    ...js.configs.all,
-    languageOptions: {
-        globals: {
-            ...globals.node
-        }
-    }
+  ...js.configs.all,
+  ...eslintConfigPrettier,
+  languageOptions: {
+    globals: {
+      ...globals.node,
+    },
+  },
 };

@@ -1,16 +1,18 @@
 // @ts-check
 
-import angular from 'angular-eslint';
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
+const eslint = require('@eslint/js');
+const tseslint = require('typescript-eslint');
+const eslintConfigPrettier = require('eslint-config-prettier');
+const angular = require('angular-eslint');
 
-export default tseslint.config(
+module.exports = tseslint.config(
   {
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       ...angular.configs.tsRecommended,
+      eslintConfigPrettier,
     ],
     files: ['**/*.ts'],
     processor: angular.processInlineTemplates,
@@ -38,7 +40,7 @@ export default tseslint.config(
     ...tseslint.configs.disableTypeChecked,
   },
   {
-    extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
+    extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility, eslintConfigPrettier],
     files: ['**/*.html'],
     rules: {
       '@angular-eslint/template/click-events-have-key-events': 'off',
