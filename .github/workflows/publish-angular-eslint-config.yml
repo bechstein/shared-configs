@@ -7,6 +7,8 @@ on:
     path:
       - "packages/angular-eslint-config/**"
 
+  workflow_dispatch:
+
 jobs:
   publish:
     runs-on: ubuntu-latest
