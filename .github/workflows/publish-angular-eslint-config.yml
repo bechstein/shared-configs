@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 1
           sparse-checkout-cone-mode: "true"
-          sparse-checkout: package/angular-eslint-config
+          sparse-checkout: packages/angular-eslint-config
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
