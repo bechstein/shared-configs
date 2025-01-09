@@ -7,6 +7,8 @@ on:
     path:
       - "packages/prettier-config/**"
 
+  workflow_dispatch:
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -32,7 +34,7 @@ jobs:
       - name: Publish to GitHub package registry
         run: npm publish --access public
         id: publish
-        working-directory: ./packages/prettier-config
+        working-directory: packages/prettier-config
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
