@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 1
           sparse-checkout-cone-mode: "true"
-          sparse-checkout: package/prettier-config
+          sparse-checkout: packages/prettier-config
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
