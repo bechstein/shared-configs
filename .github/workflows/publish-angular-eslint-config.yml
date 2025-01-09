@@ -1,11 +1,11 @@
-name: Publish @bechstein/prettier-config to NPM
+name: Publish @bechstein/angular-eslint-config to NPM
 
 on:
   push:
     branches:
       - main
     path:
-      - "packages/prettier-config/**"
+      - "packages/angular-eslint-config/**"
 
 jobs:
   publish:
@@ -21,7 +21,7 @@ jobs:
         with:
           fetch-depth: 1
           sparse-checkout-cone-mode: "true"
-          sparse-checkout: package/prettier-config
+          sparse-checkout: package/angular-eslint-config
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,7 +32,7 @@ jobs:
       - name: Publish to GitHub package registry
         run: npm publish --access public
         id: publish
-        working-directory: ./packages/prettier-config
+        working-directory: ./packages/angular-eslint-config
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
