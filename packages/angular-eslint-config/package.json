@@ -1,43 +1,49 @@
 {
   "name": "@bechstein/angular-eslint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Universal shareable ESLint configuration extended for Angular",
+  "type": "module",
   "exports": {
-    "import": "./index.mjs",
-    "require": "./index.js"
-  },
-  "files": [
-    "index.*",
-    "LICENSE.txt"
-  ],
-  "scripts": {
-    "prepublishOnly": "cp ../../LICENSE.txt ./LICENSE.txt",
-    "postpublish": "rm -rf ./LICENSE.txt"
+    "import": "./index.js",
+    "require": "./index.cjs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bechstein/shared-configs.git"
   },
-  "keywords": [
-    "angular",
-    "config",
-    "eslint",
-    "shared"
-  ],
-  "author": "C. Bechstein Digital GmbH",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bechstein/shared-configs/issues"
   },
   "homepage": "https://github.com/bechstein/shared-configs#readme",
-  "dependencies": {
-    "eslint-config-prettier": "*"
+  "keywords": [
+    "angular",
+    "eslint",
+    "config",
+    "shared",
+    "linting",
+    "typescript"
+  ],
+  "author": "C. Bechstein Digital GmbH",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "index.cjs"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "@eslint/js": "^9.0.0",
+    "@eslint/js": "^9.20.0",
     "angular-eslint": "^18.0.0 || ^19.0.0",
-    "eslint": "^9.0.0",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-jest": "^28.11.0",
     "typescript": "*",
-    "typescript-eslint": "^8.0.0"
-  }
+    "typescript-eslint": "^8.24.1"
+  },
+  "devDependencies": {
+    "rollup": "^4.34.1"
+  },
+  "private": false
 }

@@ -1,56 +1,61 @@
 # @bechstein/angular-eslint-config
 
+_A shareable ESLint configuration tailored for Angular projects._
+
 ## Installation
 
-To install the package, follow the steps below:
+To install the package, follow these steps:
 
-1. Install peer dependencies:
+### Install Peer Dependencies
 
-   ```bash
-   npm i -D eslint @eslint/js typescript typescript-eslint angular-eslint
-   ```
+Before installing this package, make sure you have the required peer dependencies installed:
 
-2. Install `@bechstein/angular-eslint-config`:
+```bash
+npm install --save-dev eslint @eslint/js typescript typescript-eslint angular-eslint eslint-config-prettier
+```
 
-   ```bash
-   npm i -D @bechstein/angular-eslint-config
-   ```
+### Install `@bechstein/angular-eslint-config`
+
+```bash
+npm install --save-dev @bechstein/angular-eslint-config
+```
 
 ## Usage
 
-- Create a ~~`eslint.config.js`~~/`eslint.config.mjs` file and add the following:
+To apply this ESLint configuration, create an ~~`eslint.config.js`~~/`eslint.config.mjs` file and include the following setup:
 
-  ```js
-  import cbdAngular from "@bechstein/angular-eslint-config";
-  import tseslint from "typescript-eslint";
+```js
+import cbdAngular from "@bechstein/angular-eslint-config";
+import tseslint from "typescript-eslint";
 
-  export default tseslint.config(...cbdAngular, {
-    languageOptions: {
-      parserOptions: {
-        project: ["**/tsconfig*.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
+export default tseslint.config(...cbdAngular, {
+  languageOptions: {
+    parserOptions: {
+      project: ["**/tsconfig*.json"],
+      tsconfigRootDir: import.meta.dirname,
     },
-  });
-  ```
+  },
+});
+```
 
-### Helper scripts
+## Helper Scripts
 
-The following helper scripts can be added to `package.json`:
+Add the following scripts to your `package.json` to simplify linting:
 
 ```json
 {
   "scripts": {
-    "eslint:check": "npx eslint .",
-    "eslint:fix": "npx eslint . --fix"
+    "eslint": "npx eslint",
+    "lint": "npm run eslint -- .",
+    "fmt": "npm run eslint -- . --fix"
   }
 }
 ```
 
-### WebStorm Integration
+## 💡 WebStorm Integration
 
-To enable eslint in your IDE (and also _Run on save_):
+To enable ESLint in WebStorm (and run it automatically on save):
 
-_Settings_ --> _Languages & Frameworks_ --> _ESLint_
-
-![WebStorm integration screenshot](assets/webstorm-integration.png)
+1. Open **Settings**.
+2. Navigate to **Languages & Frameworks → ESLint**.
+3. Enable ESLint and set it up for your project.
