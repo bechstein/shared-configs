@@ -25,6 +25,7 @@ npm install --save-dev @bechstein/prettier-config
 You can apply this Prettier configuration using **one** of the following methods:
 
 ### 🔹 **1. Reference in `package.json`**
+
 Add the configuration reference in your `package.json` file:
 
 ```json
@@ -36,6 +37,7 @@ Add the configuration reference in your `package.json` file:
 ```
 
 ### 🔹 **2. Use `.prettierrc.js` / `.prettierrc.mjs` (ESM)**
+
 Create a `.prettierrc.js` or `.prettierrc.mjs` file with the following content:
 
 ```js
@@ -49,6 +51,7 @@ export default {
 ```
 
 ### 🔹 **3. Use `.prettierrc.js` / `.prettierrc.cjs` (CommonJS)**
+
 For projects using CommonJS, create a `.prettierrc.js` or `.prettierrc.cjs` file:
 
 ```js
