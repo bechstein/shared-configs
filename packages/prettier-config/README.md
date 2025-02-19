@@ -1,62 +1,72 @@
 # @bechstein/prettier-config
 
+_A shareable Prettier configuration for consistent code formatting._
+
 ## Installation
 
-To install the package, follow the steps below:
+To install the package, follow these steps:
 
-1. Install peer dependencies:
+### Install Peer Dependencies
 
-   ```bash
-   npm i -D prettier
-   ```
+Before installing this package, ensure you have Prettier installed:
 
-2. Install `@bechstein/prettier-config`:
+```bash
+npm install --save-dev prettier
+```
 
-   ```bash
-   npm i -D @bechstein/prettier-config
-   ```
+### Install `@bechstein/prettier-config`
+
+```bash
+npm install --save-dev @bechstein/prettier-config
+```
 
 ## Usage
 
-To use the configuration in a project, use **one** of the methods below:
+You can apply this Prettier configuration using **one** of the following methods:
 
-- Reference the shared config in your `package.json`:
+### 🔹 **1. Reference in `package.json`**
 
-  ```json
-  {
-    "name": "@bechstein/connect",
-    "version": "1.0.0",
-    "prettier": "@bechstein/prettier-config"
-  }
-  ```
+Add the configuration reference in your `package.json` file:
 
-- Create a `.prettierrc.js`/`.prettierrc.mjs` file and add the following (ESM):
+```json
+{
+  "name": "@bechstein/repo",
+  "version": "1.0.0",
+  "prettier": "@bechstein/prettier-config"
+}
+```
 
-  ```js
-  import cbdPrettierConfig from "@bechstein/prettier-config";
+### 🔹 **2. Use `.prettierrc.js` / `.prettierrc.mjs` (ESM)**
 
-  export default {
-    ...cbdPrettierConfig,
-    //  override the configuration if needed
-    // semi: false
-  };
-  ```
+Create a `.prettierrc.js` or `.prettierrc.mjs` file with the following content:
 
-- Create a `.prettierrc.js`/`.prettierrc.cjs` file and add the following (CommonJS):
+```js
+import cbdPrettierConfig from "@bechstein/prettier-config";
 
-  ```js
-  const cbdPrettierConfig = require("@bechstein/prettier-config");
+export default {
+  ...cbdPrettierConfig,
+  // Override the configuration if needed
+  // semi: false
+};
+```
 
-  module.exports = {
-    ...cbdPrettierConfig,
-    //  override the configuration if needed
-    // semi: false
-  };
-  ```
+### 🔹 **3. Use `.prettierrc.js` / `.prettierrc.cjs` (CommonJS)**
 
-### Ignoring Files: .prettierignore
+For projects using CommonJS, create a `.prettierrc.js` or `.prettierrc.cjs` file:
 
-To exclude files from formatting, create a `.prettierignore` file in the root of your project.
+```js
+const cbdPrettierConfig = require("@bechstein/prettier-config");
+
+module.exports = {
+  ...cbdPrettierConfig,
+  // Override the configuration if needed
+  // semi: false
+};
+```
+
+## Ignoring Files with `.prettierignore`
+
+To exclude specific files or directories from formatting, create a `.prettierignore` file in your project's root:
 
 ```gitignore
 **/dist
@@ -66,23 +76,26 @@ To exclude files from formatting, create a `.prettierignore` file in the root of
 **/ios
 ```
 
-### Helper scripts
+---
 
-The following helper scripts can be added to `package.json`:
+## Helper Scripts
+
+Add the following scripts to your `package.json` to automate formatting:
 
 ```json
 {
   "scripts": {
-    "prettier:check": "npx prettier . --check",
-    "prettier:fix": "npx prettier . --write"
+    "prettier": "npx prettier",
+    "check": "npm run prettier -- . --check",
+    "fix": "npm run prettier -- . --write"
   }
 }
 ```
 
-### WebStorm Integration
+## WebStorm Integration
 
-To enable prettier in your IDE (and also _Run on save_):
+To enable Prettier in WebStorm and automatically format files on save:
 
-_Settings_ --> _Languages & Frameworks_ --> _Prettier_
-
-![WebStorm integration screenshot](assets/webstorm-integration.png)
+1. Open **Settings**.
+2. Navigate to **Languages & Frameworks → Prettier**.
+3. Enable Prettier and configure it for your project.
